@@ -1,1 +1,28 @@
-{"name":"sitemap-tool-next15","version":"1.0.0","private":true,"scripts":{"dev":"next dev","build":"next build","start":"next start","lint":"next lint"},"dependencies":{"@types/node":"^22.0.0","@types/react":"^19.0.0","@types/react-dom":"^19.0.0","cheerio":"^1.0.0","fast-xml-parser":"^4.5.0","next":"15.5.4","react":"19.1.0","react-dom":"19.1.0","xlsx":"^0.18.5"},"devDependencies":{"typescript":"^5.7.0"}}
+{
+  "name": "sku-sitemap",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "dependencies": {
+    "cheerio": "1.0.0",
+    "fast-xml-parser": "^5.2.5",
+    "next": "15.5.9",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.7.0"
+  }
+}

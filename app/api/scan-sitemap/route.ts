@@ -3,7 +3,7 @@ import { XMLParser } from "fast-xml-parser";
 import * as XLSX from "xlsx";
 import { assertPublicHttpUrl } from "@/lib/security";
 import { discoverSitemap } from "@/lib/sitemap-discovery";
-export const runtime="nodejs"; export const maxDuration=120;
+export const runtime="nodejs"; export const maxDuration=60;
 const MAX=2000,parser=new XMLParser();
 type Row={URL:string;LastModified:string;ChangeFrequency:string;Priority:string|number;SourceSitemap:string};
 const arr=<T,>(v:T|T[]|undefined):T[]=>!v?[]:Array.isArray(v)?v:[v];
