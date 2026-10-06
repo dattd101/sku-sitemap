@@ -1,0 +1,4 @@
+import { isIP } from "node:net";
+import dns from "node:dns/promises";
+function privateIp(ip:string){if(ip.startsWith("127.")||ip.startsWith("10.")||ip.startsWith("192.168.")||ip.startsWith("169.254.")||ip==="::1")return true; const m=ip.match(/^172\.(\d+)\./); return !!m && +m[1]>=16 && +m[1]<=31;}
+export async function assertPublicHttpUrl(raw:string){const u=new URL(raw); if(!["http:","https:"].includes(u.protocol)) throw new Error("Chỉ hỗ trợ HTTP/HTTPS"); if(u.username||u.password) throw new Error("URL không được chứa thông tin đăng nhập"); if(u.hostname==="localhost") throw new Error("Không cho phép localhost/private network"); const ips=isIP(u.hostname)?[{address:u.hostname}]:await dns.lookup(u.hostname,{all:true}); if(ips.some(x=>privateIp(x.address))) throw new Error("Không cho phép localhost/private network"); return u;}
